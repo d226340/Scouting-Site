@@ -1,0 +1,42 @@
+/*!
+Theme Name: iAgency
+Theme URI: https://ithemer.com/themes/iagency-free-wordpress-theme/
+Author: ithemer
+Author URI: https://ithemer.com
+Template:ithemer
+Description: iAgency is the Multipurpose Agency Theme ,is Child Theme of iThemer, It Comes with Slider and Unlimited Theme Color Option. iAgency Support Woocommerce  Detail:http://ithemer.com/themes/iagency-free-wordpress-theme/ ,View Demo:http://ithemer.com/view?theme=iagency
+Version: 1.0.2
+Template Version:1.2.0
+License: GNU General Public License v2 or later
+License URI: https://ithemer.com/license
+Text Domain: iagency
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready,two-columns,right-sidebar,custom-header,footer-widgets,blog,portfolio
+
+*/
+/*--------------------------------------------------------------
+iAgency CSS
+--------------------------------------------------------------*/ 
+
+#header .logo {
+    padding-top: 0;
+}
+h1.site-title{
+	margin-top:10px;
+	padding: 0;
+	font-size: 30px;
+}
+#footer .copyright {
+    text-align: right;
+}
+#footer .social {
+    text-align: left;
+}
+.panel{
+	background: transparent;
+}
+#personal-area.slider .owl-dots {
+    bottom: 70px;
+}
+#about-me .tab-content {
+    min-height: 350px;
+}

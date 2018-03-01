@@ -1,82 +1,95 @@
 <?php
 /**
- *    The template for dispalying the footer.
+ * The template for displaying the footer
  *
- * @package    WordPress
- * @subpackage illdy
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package iAgency
  */
-?>
-<?php
 
-if ( current_user_can( 'edit_theme_options' ) ) {
-	$footer_copyright = get_theme_mod( 'illdy_footer_copyright', sprintf( __( '&copy; Copyright %s. All Rights Reserved.', 'illdy' ), date( 'Y' ) ) );
-} else {
-	$footer_copyright = get_theme_mod( 'illdy_footer_copyright' );
-}
-?>
-<footer id="footer">
-	<div class="container">
-		<div class="row">
+?>		
+						</div>
+			</div>
+		</section>
+		<!-- Footer Top -->
+			<section id="blog" class="section archive footer">
+			<div class="container">
+				<div class="row">
+					<!-- Single Widget -->
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="blog-sidebar">
+						<?php dynamic_sidebar( 'footer-1' ); ?>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="blog-sidebar">
+						<?php dynamic_sidebar( 'footer-2' ); ?>
+					</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="blog-sidebar">
+						<?php dynamic_sidebar( 'footer-3' ); ?>
+					</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="blog-sidebar">
+						<?php dynamic_sidebar( 'footer-4' ); ?>
+					</div>
+					</div>
+					<!--/ End Single Widget -->
+				</div>
+			</div>
+		</section>
+		<!--/ End footer Top -->
+
+	
+		<!-- Start Footer -->
+		<footer id="footer">
+			<!--/ End Arrow -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<!-- Social -->
+						<ul class="social">
+							             <?php if(get_theme_mod('ithemer_facebook_url')): ?>
+										<li><a href="<?php echo esc_url(get_theme_mod('ithemer_facebook_url')); ?>"><i class="fa fa-facebook"></i></a></li>
+                                        <?php endif; ?>
+										<?php if(get_theme_mod('ithemer_twitter_url')): ?>
+										<li><a href="<?php echo esc_url(get_theme_mod('ithemer_twitter_url')); ?>"><i class="fa fa-twitter"></i></a></li>
+                                        <?php endif; ?>
+                                        <?php if(get_theme_mod('ithemer_linkedin_url')): ?>
+										<li><a href="<?php echo esc_url(get_theme_mod('ithemer_linkedin_url')); ?>"><i class="fa fa-linkedin"></i></a></li>
+                                        <?php endif; ?>
+                                        <?php if(get_theme_mod('ithemer_youtube_url')): ?>
+										<li><a href="<?php echo esc_url(get_theme_mod('ithemer_youtube_url')); ?>"><i class="fa fa-youtube"></i></a></li>
+                                        <?php endif; ?>
+                                        <?php if(get_theme_mod('ithemer_pinterest_url')): ?>
+										<li><a href="<?php echo esc_url(get_theme_mod('ithemer_pinterest_url')); ?>"><i class="fa fa-pinterest"></i></a></li>
+                                        <?php endif; ?>
+						</ul>
+						<!--/ End Social -->
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<!-- Copyright -->
+						<div class="copyright">
+							<p>
 			<?php
-			$the_widget_args = array(
-				'before_widget' => '<div class="widget">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<div class="widget-title"><h5>',
-				'after_title'   => '</h5></div>',
-			);
-			?>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<?php
-				if ( is_active_sidebar( 'footer-sidebar-1' ) ) :
-					dynamic_sidebar( 'footer-sidebar-1' );
-				elseif ( current_user_can( 'edit_theme_options' ) ) :
-					the_widget( 'WP_Widget_Text', 'title=' . __( 'Products', 'illdy' ) . '&text=<ul><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Our work', 'illdy' ) . '">' . __( 'Our work', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Club', 'illdy' ) . '">' . __( 'Club', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'News', 'illdy' ) . '">' . __( 'News', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Announcement', 'illdy' ) . '">' . __( 'Announcement', 'illdy' ) . '</a></li></ul>', $the_widget_args );
-				endif;
-				?>
-			</div><!--/.col-sm-3-->
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<?php
-				if ( is_active_sidebar( 'footer-sidebar-2' ) ) :
-					dynamic_sidebar( 'footer-sidebar-2' );
-				elseif ( current_user_can( 'edit_theme_options' ) ) :
-					the_widget( 'WP_Widget_Text', 'title=' . __( 'Information', 'illdy' ) . '&text=<ul><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Pricing', 'illdy' ) . '">' . __( 'Pricing', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Terms', 'illdy' ) . '">' . __( 'Terms', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Affiliates', 'illdy' ) . '">' . __( 'Affiliates', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Blog', 'illdy' ) . '">' . __( 'Blog', 'illdy' ) . '</a></li></ul>', $the_widget_args );
-				endif;
-				?>
-			</div><!--/.col-sm-3-->
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<?php
-				if ( is_active_sidebar( 'footer-sidebar-3' ) ) :
-					dynamic_sidebar( 'footer-sidebar-3' );
-				elseif ( current_user_can( 'edit_theme_options' ) ) :
-					the_widget( 'WP_Widget_Text', 'title=' . __( 'Support', 'illdy' ) . '&text=<ul><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Documentation', 'illdy' ) . '">' . __( 'Documentation', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'FAQs', 'illdy' ) . '">' . __( 'FAQs', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Forums', 'illdy' ) . '">' . __( 'Forums', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Contact', 'illdy' ) . '">' . __( 'Contact', 'illdy' ) . '</a></li></ul>', $the_widget_args );
-				endif;
-				?>
-			</div><!--/.col-sm-3-->
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<?php
-				if ( is_active_sidebar( 'footer-sidebar-4' ) ) :
-					dynamic_sidebar( 'footer-sidebar-4' );
-				elseif ( current_user_can( 'edit_theme_options' ) ) :
-					the_widget( 'WP_Widget_Text', 'title=' . __( 'Support', 'illdy' ) . '&text=<ul><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Documentation', 'illdy' ) . '">' . __( 'Documentation', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'FAQs', 'illdy' ) . '">' . __( 'FAQs', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Forums', 'illdy' ) . '">' . __( 'Forums', 'illdy' ) . '</a></li><li><a href="' . esc_url( '#' ) . '" title="' . __( 'Contact', 'illdy' ) . '">' . __( 'Contact', 'illdy' ) . '</a></li></ul>', $the_widget_args );
-				endif;
-				?>
-			</div><!--/.col-sm-3-->
-		</div><!--/.row-->
-	</div><!--/.container-->
-	<div class="bottom-footer">
-		<div class="container">
-			<p class="copyright">
-				<span><?php printf( '%s <a href="%s" title="%s" target="_blank">%s</a>.', __( 'Theme:', 'illdy' ), esc_url( 'http://colorlib.com/wp/themes/illdy' ), __( 'Illdy', 'illdy' ), __( 'Illdy', 'illdy' ) ); ?></span>
-				<span class="bottom-copyright" data-customizer="copyright-credit"><?php echo illdy_sanitize_html( $footer_copyright ); ?></span>
-			</p>
-		</div>
-	</div>
-</footer><!--/#footer-->
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s', 'iagency' ), 'iAgency', '<a href="http://ithemer.com/">iThemer</a>' );
+			?></p>
+						</div>
+						<!--/ End Copyright -->
+					</div>
+					
+				</div>
+			</div>
+		</footer>
+		<!--/ End Footer -->
+	
 
-<?php if ( 'page' == get_option( 'show_on_front' ) && is_front_page() && get_theme_mod( 'illdy_go_to_top', false ) ) : ?>
-	<a href="#" class="illdy-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-<?php endif ?>
 
-<?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 </body>
 </html>
